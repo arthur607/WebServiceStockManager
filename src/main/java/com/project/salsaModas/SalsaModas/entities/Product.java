@@ -13,7 +13,7 @@ import java.util.Objects;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)    //id auto increment
+    @GeneratedValue(strategy = GenerationType.IDENTITY)    //id auto increment
     private Long id;
     private String nome;
     private String modelo;

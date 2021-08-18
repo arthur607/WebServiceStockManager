@@ -4,7 +4,6 @@ import com.project.salsaModas.SalsaModas.entities.Product;
 import com.project.salsaModas.SalsaModas.services.ProductSerice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +18,9 @@ public class ProductController {
     ProductSerice productSerice;
 
     @GetMapping
-    public ResponseEntity<List<Product>> findAll(){
+    public ResponseEntity<Product> findAll(){
+        Product p = new Product(1L,"Arthur","vestido",180.0);
         List<Product> a = productSerice.findAll();
-        return ResponseEntity.ok().body(a);
+        return ResponseEntity.ok().body(p);
     }
-
 }
